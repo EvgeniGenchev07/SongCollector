@@ -1,0 +1,1 @@
+F:\files\programi\MauiApp\SongCollector\SongCollector.csproj;x64

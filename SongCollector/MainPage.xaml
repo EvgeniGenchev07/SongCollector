@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:media="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:view="clr-namespace:SongCollector"
+             x:Class="SongCollector.MainPage"
+             x:DataType="view:MainViewModel"
+             Background="{StaticResource Gray950}">
+    <Grid RowDefinitions=".1*,.1*,.55*,.15*,.15*">
+            <Grid Margin="20" ColumnDefinitions="*,*,*">
+                <Label
+                        Grid.Column="1"
+                        FontSize="15"
+                        HorizontalTextAlignment="Start"
+                        Text="Song Collector"
+                        TextColor="{StaticResource Gray200}"
+                        VerticalOptions="Center" />
+                <ImageButton Grid.Column="2" 
+                             HorizontalOptions="End"  
+                             VerticalOptions="Center"
+                             WidthRequest="30"
+                             HeightRequest="30"
+                             CornerRadius="10"
+                             Command="{Binding AddCommand}">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            FontFamily="Icons"
+                            Glyph="&#xE800;"
+                            Size="15"
+                            Color="{StaticResource Gray200}" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+        <Grid
+        RowDefinitions="*,Auto"
+        RowSpacing="0" Grid.Row="1" Grid.RowSpan="4">
+            <CollectionView ItemsSource="{Binding Songs}"
+                 Margin="30,0,30,0"
+                            SelectionChanged="CollectionView_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="view:Song">
+                        <Frame BackgroundColor="{StaticResource Gray900}" 
+                               BorderColor="Black"
+                               Margin="1">
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Name}" 
+                                       TextColor="{StaticResource Gray300}"
+                                       HorizontalOptions="Start" 
+                                       FontSize="Medium" 
+                                       Padding="0"></Label>
+                            </HorizontalStackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=TapCommand}"
+                                                      CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ContentView Content="{Binding MediaElement}"/>
+                <view:PlayerControl IsVisible="{Binding IsPlayerVisible}" Grid.Row="2" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></view:PlayerControl>
+        </Grid>
+        </Grid>
+
+</ContentPage>

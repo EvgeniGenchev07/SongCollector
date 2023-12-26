@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid    
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:SongCollector"
+    x:Class="SongCollector.PlayerControl" 
+    Margin="0,0,0,0" 
+    HorizontalOptions="FillAndExpand" 
+    VerticalOptions="FillAndExpand"
+    BackgroundColor="{StaticResource Gray950}">
+    <Border
+        Padding="6,0"
+        Margin="0"
+        BackgroundColor="{StaticResource Gray950}"
+        StrokeShape="RoundRectangle 6">
+        <Grid HeightRequest="52" BackgroundColor="{StaticResource Gray950}">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Border
+                    Margin="0"
+                    BackgroundColor="{StaticResource Gray950}"
+                    HeightRequest="35"
+                    StrokeShape="RoundRectangle 6"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+                    <Grid>
+                        <Image Source="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6" />
+                    </Grid>
+                </Border>
+                <Label Margin="10,0" 
+                       VerticalOptions="Center" 
+                       TextColor="{StaticResource Gray200}" 
+                       FontSize="Small" 
+                       Text="Fix You"/>
+                <ImageButton Margin="0,0,10,0"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="Center"
+                             WidthRequest="30"
+                            HeightRequest="30"
+                             Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=PreviousCommand}"
+                                                      CommandParameter="{Binding .}">
+                    <ImageButton.Source>
+                            <FontImageSource
+                             FontFamily="Icons"
+                                 Size="15"
+                                Glyph="&#xE803;"
+                                Color="{StaticResource Gray400}" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton Margin="0,0,10,0"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="Center"
+                             x:Name="Ad"
+                             Clicked="ImageButton_Clicked"
+                             WidthRequest="30"
+                             HeightRequest="30"
+             Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=PauseAndPlayCommand}"
+                                      CommandParameter="{Binding .}">
+                    <ImageButton.Source>
+                        <FontImageSource
+             FontFamily="Icons"
+                 Size="15"
+                Glyph="&#xE801;"
+                Color="{StaticResource Gray400}" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton Margin="0,0,10,0"
+                                HorizontalOptions="EndAndExpand"
+                VerticalOptions="Center" 
+                             WidthRequest="30"
+                             HeightRequest="30"
+             Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=NextCommand}"
+                                      CommandParameter="{Binding .}">
+                    <ImageButton.Source>
+                        <FontImageSource
+             FontFamily="Icons"
+                 Size="15"
+                Glyph="&#xE804;"
+                Color="{StaticResource Gray400}" />
+                    </ImageButton.Source>
+                </ImageButton>
+                
+            </StackLayout>
+            <Grid VerticalOptions="EndAndExpand">
+                <Line
+                    Stroke="{StaticResource Gray600Brush}"
+                    StrokeLineCap="Round"
+                    StrokeThickness="3"
+                    X1="0"
+                    X2="1000"
+                    Y1="0"
+                    Y2="0" />
+                <Line
+                    Stroke="{StaticResource Gray900Brush}"
+                    StrokeLineCap="Round"
+                    StrokeThickness="3"
+                    X1="0"
+                    X2="200"
+                    Y1="0"
+                    Y2="0" />
+            </Grid>
+        </Grid>
+    </Border>
+</Grid>
