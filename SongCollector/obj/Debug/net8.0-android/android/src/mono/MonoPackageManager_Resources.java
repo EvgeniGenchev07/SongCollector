@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "SongCollector.dll" comes first in this list. */
 		"SongCollector.dll",
+		"AsyncAwaitBestPractices.dll",
 		"CommunityToolkit.Maui.dll",
 		"CommunityToolkit.Maui.Core.dll",
 		"CommunityToolkit.Maui.MediaElement.dll",
@@ -23,6 +24,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.dll",
 		"Microsoft.Maui.Essentials.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Mopups.dll",
 		"Newtonsoft.Json.dll",
 		"SQLite-net.dll",
 		"SQLiteNetExtensions.dll",

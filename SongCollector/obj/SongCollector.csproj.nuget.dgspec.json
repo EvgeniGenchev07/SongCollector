@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\files\\programi\\MauiApp\\SongCollector\\SongCollector.csproj": {}
+    "F:\\files\\programs\\Apps\\SongCollector\\SongCollector\\SongCollector.csproj": {}
   },
   "projects": {
-    "F:\\files\\programi\\MauiApp\\SongCollector\\SongCollector.csproj": {
+    "F:\\files\\programs\\Apps\\SongCollector\\SongCollector\\SongCollector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\files\\programi\\MauiApp\\SongCollector\\SongCollector.csproj",
+        "projectUniqueName": "F:\\files\\programs\\Apps\\SongCollector\\SongCollector\\SongCollector.csproj",
         "projectName": "SongCollector",
-        "projectPath": "F:\\files\\programi\\MauiApp\\SongCollector\\SongCollector.csproj",
+        "projectPath": "F:\\files\\programs\\Apps\\SongCollector\\SongCollector\\SongCollector.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "F:\\files\\programi\\MauiApp\\SongCollector\\obj\\",
+        "outputPath": "F:\\files\\programs\\Apps\\SongCollector\\SongCollector\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -92,6 +92,10 @@
               "version": "[8.0.0, )",
               "autoReferenced": true
             },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -154,6 +158,10 @@
               "target": "Package",
               "version": "[8.0.0, )",
               "autoReferenced": true
+            },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -218,6 +226,10 @@
               "version": "[8.0.0, )",
               "autoReferenced": true
             },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -276,6 +288,10 @@
               "target": "Package",
               "version": "[8.0.3, )"
             },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -326,7 +342,7 @@
         "android-x86": {
           "#import": []
         },
-        "iossimulator-x64": {
+        "ios-arm64": {
           "#import": []
         },
         "maccatalyst-x64": {

@@ -35,30 +35,88 @@
         RowDefinitions="*,Auto"
         RowSpacing="0" Grid.Row="1" Grid.RowSpan="4">
             <CollectionView ItemsSource="{Binding Songs}"
-                 Margin="30,0,30,0"
-                            SelectionChanged="CollectionView_SelectionChanged">
+                            Margin="30,0,30,0"
+                            SelectedItem="{Binding CurrentSong}"
+                            SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="view:Song">
                         <Frame BackgroundColor="{StaticResource Gray900}" 
                                BorderColor="Black"
                                Margin="1">
                             <HorizontalStackLayout>
+                                <Label Text="{Binding Id}" 
+                                       TextColor="{StaticResource Gray300}"
+                                       HorizontalOptions="Start" 
+                                       FontSize="Medium" 
+                                       Padding="0">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal"></VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor" Value="Green"></Setter>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Label>
+                                <Label Text="." 
+                                       TextColor="{StaticResource Gray300}"
+                                       HorizontalOptions="Start" 
+                                       FontSize="Medium" 
+                                       Padding="0">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal"></VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor" Value="Green"></Setter>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Label>
                                 <Label Text="{Binding Name}" 
                                        TextColor="{StaticResource Gray300}"
                                        HorizontalOptions="Start" 
                                        FontSize="Medium" 
-                                       Padding="0"></Label>
+                                       Padding="0"
+                                       Margin="10,0,0,0">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal"></VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor" Value="Green"></Setter>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Label>
                             </HorizontalStackLayout>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=TapCommand}"
                                                       CommandParameter="{Binding .}" />
                             </Frame.GestureRecognizers>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"></VisualState>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BorderColor" Value="Green"></Setter>
+                                            <Setter Property="BackgroundColor" Value="{StaticResource Gray900}"></Setter>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
                         </Frame>
+                        
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <ContentView Content="{Binding MediaElement}"/>
-                <view:PlayerControl IsVisible="{Binding IsPlayerVisible}" Grid.Row="2" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></view:PlayerControl>
+                <view:PlayerControl x:Name="Player" IsVisible="{Binding IsPlayerVisible}" Grid.Row="2" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></view:PlayerControl>
         </Grid>
         </Grid>
 

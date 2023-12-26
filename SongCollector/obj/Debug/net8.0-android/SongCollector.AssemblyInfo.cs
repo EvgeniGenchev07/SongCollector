@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SongCollector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+967471756914a73cb4390fb04057128b8ec91712")]
 [assembly: System.Reflection.AssemblyProductAttribute("SongCollector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SongCollector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

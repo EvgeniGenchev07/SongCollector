@@ -30,7 +30,7 @@
                        VerticalOptions="Center" 
                        TextColor="{StaticResource Gray200}" 
                        FontSize="Small" 
-                       Text="Fix You"/>
+                       Text="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=CurrentSong.Name}"/>
                 <ImageButton Margin="0,0,10,0"
                                 HorizontalOptions="EndAndExpand"
                                 VerticalOptions="Center"
@@ -49,8 +49,6 @@
                 <ImageButton Margin="0,0,10,0"
                 HorizontalOptions="EndAndExpand"
                 VerticalOptions="Center"
-                             x:Name="Ad"
-                             Clicked="ImageButton_Clicked"
                              WidthRequest="30"
                              HeightRequest="30"
              Command="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=PauseAndPlayCommand}"
@@ -59,7 +57,7 @@
                         <FontImageSource
              FontFamily="Icons"
                  Size="15"
-                Glyph="&#xE801;"
+                Glyph="&#xE802;"
                 Color="{StaticResource Gray400}" />
                     </ImageButton.Source>
                 </ImageButton>
@@ -82,11 +80,12 @@
             </StackLayout>
             <Grid VerticalOptions="EndAndExpand">
                 <Line
+                    x:Name="TimeLine"
                     Stroke="{StaticResource Gray600Brush}"
                     StrokeLineCap="Round"
                     StrokeThickness="3"
                     X1="0"
-                    X2="1000"
+                    X2="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=LineWidth}"
                     Y1="0"
                     Y2="0" />
                 <Line
@@ -94,7 +93,7 @@
                     StrokeLineCap="Round"
                     StrokeThickness="3"
                     X1="0"
-                    X2="200"
+                    X2="{Binding Source={RelativeSource AncestorType={x:Type view:MainViewModel}}, Path=CurrentTime}"
                     Y1="0"
                     Y2="0" />
             </Grid>

@@ -23,6 +23,7 @@ Microsoft.Maui.Controls.Xaml.dll
 Microsoft.Maui.dll
 Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
+Mopups.dll
 SQLitePCLRaw.batteries_green.dll
 SQLitePCLRaw.batteries_v2.dll
 SQLitePCLRaw.core.dll
@@ -204,5 +205,6 @@ Microsoft.Maui.Controls.aar
 maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
+Mopups.aar
 Xamarin.Google.Crypto.Tink.Android.aar
 Xamarin.Google.ErrorProne.Annotations.aar
